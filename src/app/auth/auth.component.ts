@@ -9,7 +9,6 @@ import { User } from './user'
   moduleId: module.id,
   selector: 'app-auth',
   templateUrl: 'auth.component.html',
-  providers: [AuthService],
   directives: []
 })
 export class AuthComponent implements OnInit {

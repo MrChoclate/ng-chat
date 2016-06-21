@@ -28,4 +28,12 @@ export class AuthService {
     }
     return Promise.resolve(user.username == user.password);
   }
+
+  getUsername(): string {
+    if(this.user) {
+      return this.user.username;
+    } else {
+      return "Anonymous"
+    }
+  }
 }

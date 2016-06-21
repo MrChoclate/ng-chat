@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { ChatService } from './chat.service';
 import { Message } from './message';
+import { AuthService } from '../auth/auth.service';
+
 
 
 @Component({
@@ -11,16 +13,19 @@ import { Message } from './message';
   providers: [ChatService]
 })
 export class ChatSenderComponent implements OnInit {
-  message = new Message('');
+  message = new Message();
 
-  constructor(private chatService: ChatService) {}
+  constructor(
+    private chatService: ChatService,
+    private authService: AuthService) {}
 
   ngOnInit() {
   }
 
   onSubmit(): void {
+    this.message.author = this.authService.getUsername();
     this.chatService.sendMessage(this.message);
-    this.message = new Message('');
+    this.message = new Message();
   }
 
   onClear(): void {
