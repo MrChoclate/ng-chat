@@ -23,8 +23,10 @@ export class AuthService {
     if (user.username == user.password) {
       this._isLogged.next(true);
       this.user = user;
+      return Promise.resolve(true);
+    } else {
+      return Promise.reject<boolean>(false);
     }
-    return Promise.resolve(user.username == user.password);
   }
 
   getUsername(): string {
