@@ -13,6 +13,7 @@ import { Message } from './message';
       <ul class="collection">
         <li *ngFor="let message of messages | async" class="collection-item">
           <span class="title"><i>{{message.author}}</i></span>
+          <span class="secondary-content">{{message.timestamp | date:'shortTime'}}</span>
           <p style="white-space: pre-line">{{message.content}}</p>
         </li>
       </ul>

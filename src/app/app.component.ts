@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ChatComponent } from './chat';
+import { ChatComponent, ChatService } from './chat';
 import { AuthComponent, AuthService } from './auth';
 
 @Component({
@@ -15,7 +15,7 @@ import { AuthComponent, AuthService } from './auth';
     <app-chat></app-chat>`,
   styleUrls: ['app.component.css'],
   directives: [ChatComponent, AuthComponent],
-  providers: [AuthService]
+  providers: [AuthService, ChatService]
 })
 export class AppComponent {
 }

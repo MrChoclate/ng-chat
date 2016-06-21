@@ -10,7 +10,6 @@ import { AuthService } from '../auth/auth.service';
   moduleId: module.id,
   selector: 'chat-sender',
   templateUrl: 'chat-sender.component.html',
-  providers: [ChatService]
 })
 export class ChatSenderComponent implements OnInit {
   message = new Message();
@@ -22,8 +21,13 @@ export class ChatSenderComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(): void {
+  _updateMessage(): void {
     this.message.author = this.authService.getUsername();
+    this.message.timestamp = new Date().getTime();
+  }
+
+  onSubmit(): void {
+    this._updateMessage();
     this.chatService.sendMessage(this.message);
     this.message = new Message();
   }
