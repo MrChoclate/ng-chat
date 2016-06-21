@@ -16,12 +16,10 @@ export class AuthService {
   }
 
   logout(): void {
-    console.log('logoout');
     this._isLogged.next(false);
   }
 
   login(user: User): Promise<boolean> {
-    console.log('login');
     if (user.username == user.password) {
       this._isLogged.next(true);
       this.user = user;
