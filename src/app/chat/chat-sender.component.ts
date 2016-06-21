@@ -26,4 +26,10 @@ export class ChatSenderComponent implements OnInit {
   onClear(): void {
     this.chatService.deleteMessages();
   }
+
+  onKeypress($event: KeyboardEvent): void {
+    if ($event.keyCode == 13 && !$event.shiftKey) {
+      this.onSubmit();
+    }
+  }
 }

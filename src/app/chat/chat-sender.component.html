@@ -1,6 +1,7 @@
 <div class="row">
   <div class="input-field col s10">
-    <textarea [(ngModel)]=message.content id="textarea" class="materialize-textarea">
+    <textarea [(ngModel)]=message.content id="textarea"
+              class="materialize-textarea" (keypress)=onKeypress($event)>
     </textarea>
     <label for="textarea">Message</label>
   </div>
