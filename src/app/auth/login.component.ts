@@ -29,4 +29,10 @@ export class LoginComponent implements OnInit {
       self.router.navigate(['/chat']);
     });
   }
+
+  onKeypress($event: KeyboardEvent): void {
+    if ($event.keyCode == 13 && !$event.shiftKey) {
+      this.onLogin();
+    }
+  }
 }
