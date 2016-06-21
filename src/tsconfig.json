@@ -31,6 +31,7 @@
     "app/chat/chat.component.ts",
     "app/chat/chat.service.ts",
     "app/chat/index.ts",
+    "app/chat/message.component.ts",
     "app/chat/message.ts",
     "app/environment.ts",
     "app/index.ts",

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { ChatService } from './chat.service';
 import { Message } from './message';
+import { MessageComponent } from './message.component';
 
 @Component({
   moduleId: module.id,
@@ -11,13 +12,10 @@ import { Message } from './message';
     <div>
       <h3>My messages:</h3>
       <ul class="collection">
-        <li *ngFor="let message of messages | async" class="collection-item">
-          <span class="title"><i>{{message.author}}</i></span>
-          <span class="secondary-content">{{message.timestamp | date:'shortTime'}}</span>
-          <p style="white-space: pre-line">{{message.content}}</p>
-        </li>
+        <chat-message *ngFor="let message of messages | async" [message]="message"></chat-message>
       </ul>
     </div>`,
+  directives: [MessageComponent]
 })
 export class ChatBoxComponent implements OnInit {
   messages: Observable<Message[]>;
