@@ -1,4 +1,5 @@
 {
+  "buildOnSave": false,
   "compileOnSave": false,
   "compilerOptions": {
     "declaration": false,
@@ -15,9 +16,26 @@
     "target": "es5",
     "inlineSources": true
   },
-
+  "filesGlob": [
+    "**/*.ts",
+    "../node_modules/angularfire2/firebase3.d.ts"
+  ],
   "files": [
+    "app/app.component.ts",
+    "app/chat/chat-box.component.ts",
+    "app/chat/chat-sender.component.ts",
+    "app/chat/chat.component.ts",
+    "app/chat/chat.service.ts",
+    "app/chat/index.ts",
+    "app/chat/message.ts",
+    "app/environment.ts",
+    "app/index.ts",
     "main.ts",
-    "typings.d.ts"
-  ]
+    "system-config.ts",
+    "typings.d.ts",
+    "../node_modules/angularfire2/firebase3.d.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
 }
