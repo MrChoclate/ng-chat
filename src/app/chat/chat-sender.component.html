@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="input-field col s10">
+    <textarea [(ngModel)]=message.content id="textarea" class="materialize-textarea">
+    </textarea>
+    <label for="textarea">Message</label>
+  </div>
+
+  <div class="row col s2">
+    <button (click)=onSubmit() class="btn waves-effect waves-light">Submit
+      <i class="material-icons right">send</i>
+    </button>
+  </div>
+  <div class="row col s2">
+    <button (click)=onClear() class="btn waves-effect waves-light">Clear
+      <i class="material-icons right">clear</i>
+    </button>
+  </div>
+
+</div>

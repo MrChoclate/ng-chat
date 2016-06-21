@@ -9,7 +9,7 @@ import {Message} from './message';
 export class ChatService {
   private messages: FirebaseListObservable<Message[]>;
 
-  constructor(af: AngularFire) {
+  constructor(private af: AngularFire) {
     this.messages = af.database.list('messages');
   }
 
@@ -19,6 +19,10 @@ export class ChatService {
 
   sendMessage(message: Message): void {
     this.messages.push(message);
+  }
+
+  deleteMessages(): void {
+    this.messages.remove();
   }
 
 }
