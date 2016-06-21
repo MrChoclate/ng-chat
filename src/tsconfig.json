@@ -22,6 +22,10 @@
   ],
   "files": [
     "app/app.component.ts",
+    "app/auth/auth.component.ts",
+    "app/auth/auth.service.ts",
+    "app/auth/index.ts",
+    "app/auth/user.ts",
     "app/chat/chat-box.component.ts",
     "app/chat/chat-sender.component.ts",
     "app/chat/chat.component.ts",
